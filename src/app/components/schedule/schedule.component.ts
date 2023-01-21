@@ -34,4 +34,13 @@ export class ScheduleComponent implements OnInit {
     )
   }
 
+  timeTillDeparture(realtimeDepartureTime: number) {
+    var currentTime = new Date().getTime();
+    var timeDifference = realtimeDepartureTime - currentTime;
+    timeDifference = Math.floor(timeDifference / 1000 / 60);
+
+    console.log ("time till departure: " + timeDifference );
+    return timeDifference;
+  }
+
 }
