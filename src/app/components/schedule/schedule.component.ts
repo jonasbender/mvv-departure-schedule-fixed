@@ -9,6 +9,7 @@ import { ScheduleService } from 'src/app/service/schedule.service';
 export class ScheduleComponent implements OnInit {
 
   departures: any;
+  interval: any;
 
   constructor(
     private scheduleService: ScheduleService,
@@ -16,14 +17,21 @@ export class ScheduleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getData();
+    this.interval = setInterval(()=>{
+      this.getData();
+    },30000);
+    
 
+  }
+
+  getData() {
     this.scheduleService.getCurrentSchedule().subscribe(
       data => {
         this.departures = data;
         console.log(this.departures);
       }
     )
-
   }
 
 }
