@@ -1,39 +1,40 @@
 
+<div class="wrapper">
+    <h1>Candidplatz</h1>
 
-<h1>Candidplatz</h1>
+    <table>
+        <thead>
+            <h2>Abfahrten</h2>
+        </thead>
 
-
-
-<table>
-    <thead>
-        Abfahrten
-    </thead>
-
-    <tbody>
-        <tr *ngFor="let departure of departures">
-            <td>
-                {{departure.label}}
-            </td>
-            <td>
-                {{departure.destination}}
-            </td>
-            <td>
-                <div *ngIf="departure.occupancy == 'LOW'">
-                    <img src="https://www.mvg.de/.resources/mvgde-icons/mono/pt-occupancy-low.svg" alt="Niedrige Auslastung">
-                </div>
-                <div *ngIf="departure.occupancy == 'MEDIUM'">
-                    <img src="https://www.mvg.de/.resources/mvgde-icons/mono/pt-occupancy-medium.svg" alt="Mittlere Auslastung">
-                </div>
-                <div *ngIf="departure.occupancy == 'HIGH'">
-                    <img src="https://www.mvg.de/.resources/mvgde-icons/mono/pt-occupancy-high.svg" alt="Hohe Auslastung">
-                </div>
-            </td>
-            <td>
-                {{departure.realtimeDepartureTime  | date:'HH:mm'}}
-            </td>
-            <td>
-                in {{timeTillDeparture(departure.realtimeDepartureTime)}} Min.
-            </td>
-        </tr>
-    </tbody>
-</table>
+        <tbody>
+            <tr *ngFor="let departure of departures">
+                <td class="transportLabel">
+                    <div class="departureBox" >
+                        {{departure.label}}
+                    </div>
+                </td>
+                <td>
+                    {{departure.destination}}
+                </td>
+                <td>
+                    <div *ngIf="departure.occupancy == 'LOW'">
+                        <img src="https://www.mvg.de/.resources/mvgde-icons/mono/pt-occupancy-low.svg" alt="Niedrige Auslastung">
+                    </div>
+                    <div *ngIf="departure.occupancy == 'MEDIUM'">
+                        <img src="https://www.mvg.de/.resources/mvgde-icons/mono/pt-occupancy-medium.svg" alt="Mittlere Auslastung">
+                    </div>
+                    <div *ngIf="departure.occupancy == 'HIGH'">
+                        <img src="https://www.mvg.de/.resources/mvgde-icons/mono/pt-occupancy-high.svg" alt="Hohe Auslastung">
+                    </div>
+                </td>
+                <td>
+                    {{departure.realtimeDepartureTime  | date:'HH:mm'}}
+                </td>
+                <td>
+                    in {{timeTillDeparture(departure.realtimeDepartureTime)}} Min.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

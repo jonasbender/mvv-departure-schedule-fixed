@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ScheduleService {
   globalId = "de:09162:1180";
-  offsetInMinutes = 1;
+  offsetInMinutes = 2;
   limit = 10;
   transportTypes = "UBAHN,BUS"
 
