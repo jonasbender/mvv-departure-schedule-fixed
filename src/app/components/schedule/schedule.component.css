@@ -9,3 +9,13 @@
     font-family: PT Sans,Arial,sans-serif;
     font-weight: 700;
 }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+    border:solid;
+    border-width: 1px 0;
+}
