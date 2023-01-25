@@ -6,8 +6,14 @@
 }
 
 .transportLabel {
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
     font-family: PT Sans,Arial,sans-serif;
     font-weight: 700;
+
 }
 
 table {
@@ -18,4 +24,24 @@ table {
 tr {
     border:solid;
     border-width: 1px 0;
+}
+
+.transportLogo img{
+    width: 20px;
+}
+
+.transportLogo {
+    height: 20px;
+    border: solid;
+    border-width: 1px;
+}
+
+.departureBox {
+    width: 40px;
+    background-color: green;
+    height: 20px;
+    color: white;
+    text-align: center;
+    border: solid black;
+    border-width: 1px 1px 1px 0;
 }
