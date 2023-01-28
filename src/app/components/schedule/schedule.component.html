@@ -11,11 +11,11 @@
             <tr *ngFor="let departure of departures">
                 
                 <td class="transportLabel">
-                    <div class="transportLogo">
+                    <div class="transportLogo" *ngIf="departure.transportType  ==  'UBAHN'">
                         <img src="https://www.mvg.de/.resources/mvgde-icons/color/transport-ubahn.svg">
                     </div>
-                    <div class="transportLogo">
-                        <img src="https://www.mvg.de/.resources/mvgde-icons/color/transport-ubahn.svg">
+                    <div class="transportLogo" *ngIf="departure.transportType  ==  'BUS'">
+                        <img src="https://www.mvg.de/.resources/mvgde-icons/color/transport-bus.svg">
                     </div>
                     <div class="departureBox" >
                         {{departure.label}}

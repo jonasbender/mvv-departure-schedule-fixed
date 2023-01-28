@@ -32,16 +32,13 @@ tr {
 
 .transportLogo {
     height: 20px;
-    border: solid;
-    border-width: 1px;
 }
 
 .departureBox {
+    margin-left: 5px;
     width: 40px;
     background-color: green;
     height: 20px;
     color: white;
     text-align: center;
-    border: solid black;
-    border-width: 1px 1px 1px 0;
 }
