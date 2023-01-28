@@ -8,11 +8,16 @@ export class ScheduleService {
   globalId = "de:09162:1180";
   offsetInMinutes = 2;
   limit = 10;
-  transportTypes = "UBAHN,BUS"
+  transportTypes = "UBAHN"
+  stationName = "Candidplatz"
 
   constructor(
     private http: HttpClient
   ) { }
+
+  getStationId(stationName: string) {
+    return this.http.get('https://www.mvg.de/api/fahrinfo/location/query?q=' + stationName);
+  }
 
   getCurrentSchedule() {
 
