@@ -1,12 +1,13 @@
 
 <div class="wrapper">
     <h1>Candidplatz</h1>
-
+    <label><input type="checkbox" (change)="updateTransportTypes('UBAHN')" [checked]="transportTypes.includes('UBAHN')">U-Bahn</label>
+    <label><input type="checkbox" (change)="updateTransportTypes('BUS')" [checked]="transportTypes.includes('BUS')">Bus</label>
     <table>
         <thead>
             <h2>Abfahrten</h2>
         </thead>
-        <input type="checkbox">
+        
         <tbody>
             <tr *ngFor="let departure of departures">
                 

@@ -12,6 +12,8 @@ export class ScheduleService {
   transportTypes = "UBAHN"
   stationName = "Candidplatz"
 
+  
+
   constructor(
     private http: HttpClient
   ) { }
@@ -22,8 +24,9 @@ export class ScheduleService {
 
   
 
-  getCurrentSchedule() {
-    return this.http.get('https://www.mvg.de/api/fib/v2/departure?globalId='+ this.globalId +'&limit=' + this.limit + '&offsetInMinutes=' + this.offsetInMinutes + '&transportTypes=' + this.transportTypes)
+  getCurrentSchedule(transportTypes: string) {
+    console.log(this.transportTypes);
+    return this.http.get('https://www.mvg.de/api/fib/v2/departure?globalId='+ this.globalId +'&limit=' + this.limit + '&offsetInMinutes=' + this.offsetInMinutes + '&transportTypes=' + transportTypes)
   }
 
 }

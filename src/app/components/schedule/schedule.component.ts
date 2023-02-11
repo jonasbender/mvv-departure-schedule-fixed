@@ -10,6 +10,7 @@ export class ScheduleComponent implements OnInit {
 
   departures: any;
   interval: any;
+  transportTypes!: string[];
 
   constructor(
     private scheduleService: ScheduleService,
@@ -17,6 +18,8 @@ export class ScheduleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.transportTypes = this.scheduleService.transportTypes.split(',');
+
     this.getData();
     this.interval = setInterval(()=>{
       this.getData();
@@ -26,7 +29,8 @@ export class ScheduleComponent implements OnInit {
   }
 
   getData() {
-    this.scheduleService.getCurrentSchedule().subscribe(
+    console.log(this.transportTypes);
+    this.scheduleService.getCurrentSchedule(this.transportTypes.join(',')).subscribe(
       data => {
         this.departures = data;
         console.log(this.departures);
@@ -41,6 +45,16 @@ export class ScheduleComponent implements OnInit {
 
     console.log ("time till departure: " + timeDifference );
     return timeDifference;
+  }
+
+  updateTransportTypes(transportType: string) {
+    if (this.transportTypes.includes(transportType)) {
+      this.transportTypes = this.transportTypes.filter(type => type !== transportType);
+    } else {
+      this.transportTypes.push(transportType);
+    }
+    console.log("Tranport Types: "+this.transportTypes);
+    this.getData();
   }
 
 }
