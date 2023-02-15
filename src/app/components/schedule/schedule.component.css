@@ -42,3 +42,7 @@ tr {
     color: white;
     text-align: center;
 }
+
+.occ-icon {
+    filter: invert(24%) sepia(10%) saturate(0%) hue-rotate(192deg) brightness(99%) contrast(91%);
+}
