@@ -11,6 +11,7 @@ export class ScheduleComponent implements OnInit {
   departures: any;
   interval: any;
   transportTypes!: string[];
+  currentTime: Date = new Date();
 
   constructor(
     private scheduleService: ScheduleService,
@@ -24,6 +25,10 @@ export class ScheduleComponent implements OnInit {
     this.interval = setInterval(()=>{
       this.getData();
     },30000);
+
+    setInterval(() =>{
+      this.currentTime = new Date();
+    }, 1000);
     
 
   }
