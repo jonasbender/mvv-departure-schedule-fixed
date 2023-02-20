@@ -78,6 +78,10 @@ tr {
     filter: invert(24%) sepia(10%) saturate(0%) hue-rotate(192deg) brightness(99%) contrast(91%);
 }
 
+.occ-placeholder {
+    opacity: 0;
+}
+
 .settings-wrapper {
     position: absolute;
     bottom: 10px;

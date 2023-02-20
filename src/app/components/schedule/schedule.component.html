@@ -36,6 +36,9 @@
                     <div *ngIf="departure.occupancy == 'HIGH'">
                         <img src="https://www.mvg.de/.resources/mvgde-icons/mono/pt-occupancy-high.svg" alt="Hohe Auslastung" class="occ-icon">
                     </div>
+                    <div *ngIf="departure.occupancy == 'UNKNOWN'">
+                        <img src="https://www.mvg.de/.resources/mvgde-icons/mono/pt-occupancy-high.svg" class="occ-placeholder">
+                    </div>
                 </td>
                 <td>
                     {{departure.realtimeDepartureTime  | date:'HH:mm'}}
