@@ -61,5 +61,4 @@ export class ScheduleComponent implements OnInit {
     console.log("Tranport Types: "+this.transportTypes);
     this.getData();
   }
-
 }
