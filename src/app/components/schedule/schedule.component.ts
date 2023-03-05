@@ -58,6 +58,7 @@ export class ScheduleComponent implements OnInit {
     } else {
       this.transportTypes.push(transportType);
     }
+    
     console.log("Tranport Types: "+this.transportTypes);
     this.getData();
   }
