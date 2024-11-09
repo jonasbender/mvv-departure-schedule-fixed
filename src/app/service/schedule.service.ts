@@ -26,7 +26,7 @@ export class ScheduleService {
 
   getCurrentSchedule(transportTypes: string) {
     console.log(this.transportTypes);
-    return this.http.get('https://www.mvg.de/api/fib/v2/departure?globalId='+ this.globalId +'&limit=' + this.limit + '&offsetInMinutes=' + this.offsetInMinutes + '&transportTypes=' + transportTypes)
+    return this.http.get('https://www.mvg.de/api/bgw-pt/v3/departures?globalId='+ this.globalId +'&limit=' + this.limit + '&offsetInMinutes=' + this.offsetInMinutes + '&transportTypes=' + transportTypes)
   }
 
 }
