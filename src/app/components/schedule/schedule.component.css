@@ -1,63 +1,20 @@
 
 
 
+
+
 .wrapper {
     font-family: "PT Sans", Arial, sans-serif;
+    padding: 0 20px;
 }
 
-h1 {
-    margin-left: 20px;
-}
-
-h2 {
-    margin-left: 20px;
-}
-
-.clock {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-}
-
-.transportLabel {
-    margin-left: 20px;
-    height: 100%;
+.header {
     display: flex;
-    flex-direction: row;
-    font-family: PT Sans,Arial,sans-serif;
-    font-weight: 700;
-    position: relative;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-    height: 80vh;
-}
-
-thead {
-    padding-left: 20px;
-}
-
-tr {
-    border:solid;
-    border-width: 1px 0;
-    height: auto;
-}
-
-.transportLogo img{
-    width: 20px;
-}
-
-.transportLogo {
-    height: 20px;
-    margin-top: auto;
-    margin-bottom: auto;
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
 }
 
 .departureBox {
@@ -69,32 +26,109 @@ tr {
     text-align: center;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 30px;
-    position: absolute;
+    margin-left: 0px;
+    position: relative;
+    border-radius: 5px;
     top: 0; left: 0; bottom: 0; right: 0;
 }
 
-.occ-icon {
-    filter: invert(24%) sepia(10%) saturate(0%) hue-rotate(192deg) brightness(99%) contrast(91%);
+.clock {
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
 
-.occ-placeholder {
-    opacity: 0;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+tr {
+    border-bottom: 1px solid #ddd;
+    height: 50px;
+}
+
+td, th {
+    text-align: center;
+    padding: 8px;
+}
+
+.cancelled {
+    text-decoration: line-through;
+    color: red;
+}
+
+.transportLabel img, .occ-icon {
+    width: 24px;
+    height: 24px;
+    margin-top: 5px;
+    margin-bottom: auto;
+}
+
+.platform-changed {
+    font-weight: bold;
+    color: #FF6600;
+}
+
+.delay {
+    color: red;
 }
 
 .settings-wrapper {
-    bottom: 0px;
-    right: 0px;
     background-color: white;
-    z-index: 10;
     position: fixed;
+    bottom: 0;
     width: 100%;
-    height: 20px;
-    align-items: right;
+    padding: 10px;
+    text-align: center;
 }
 
-label {
-    font-family: PT Sans,Arial,sans-serif;
-    padding-left: 10px;
-    padding-right: 10px;
+.button-wrapper img {
+    height: 20px;
+    width: 20px;
 }
+
+.button-wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 16px;
+}
+
+
+
+
+
+.button-wrapper button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    height: 40px;
+    border-radius: 20px;
+    color: #333;
+    font-size: 1rem;
+    background-color: white;
+    border: 0.5px solid #00796b;
+    cursor: pointer;
+  }
+  
+  .button-wrapper button.selected {
+    background-color: lightblue; /* selected color */
+    color: white;
+    border: none;
+  }
+  
+  .check-icon {
+    margin-right: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .icon {
+    font-weight: bold;
+  }
